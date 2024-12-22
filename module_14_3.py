@@ -97,5 +97,9 @@ async def send_confirm_message(call):
     await call.message.answer('Вы успешно приобрели продукт!')
     await call.answer()
 
+@dp.message_handler()
+async def all_messages(message):
+    await message.answer("Введите ключевое слово")
+
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
